@@ -1,51 +1,35 @@
-def bubble_sort(arr):
-    n = len(arr)
-    # Traverse through all array elements
+def a_bubbly_kind_of_sort(argh):
+    n = len(argh)
     for i in range(n):
-        # Last i elements are already in place
         for j in range(0, n - i - 1):
-            # traverse the array from 0 to n-i-1
-            # Swap if the element found is greater
-            # than the next element
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            if argh[j] > argh[j + 1]:
+                argh[j], argh[j + 1] = argh[j + 1], argh[j]
 
 
-def insertion_sort(arr):
-    # Traverse through 1 to len(arr)
-    for i in range(1, len(arr)):
-        key = arr[i]
-        # Move elements of arr[0..i-1], that are
-        # greater than key, to one position ahead
-        # of their current position
+def the_sort_that_inserts(ugh):
+    for i in range(1, len(ugh)):
+        key = ugh[i]
         j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
+        while j >= 0 and key < ugh[j]:
+            ugh[j + 1] = ugh[j]
             j -= 1
-        arr[j + 1] = key
+        ugh[j + 1] = key
 
 
-def partition(arr, low, high):
-    i = (low - 1)  # index of smaller element
-    pivot = arr[high]  # pivot
+def break_up_the_band(ugg, low, high):
+    i = (low - 1)
+    pivot = ugg[high]
     for j in range(low, high):
-        # If current element is smaller than or
-        # equal to pivot
-        if arr[j] <= pivot:
-            # increment index of smaller element
+        if ugg[j] <= pivot:
             i = i + 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return (i + 1)
+            ugg[i], ugg[j] = ugg[j], ugg[i]
+    ugg[i + 1], ugg[high] = ugg[high], ugg[i + 1]
+    return i + 1
 
 
 # Function to do Quick sort
-def quick_sort(arr, low, high):
+def a_super_fast_sort(arr, low, high):
     if low < high:
-        # pi is partitioning index, arr[p] is now
-        # at right place
-        pi = partition(arr, low, high)
-        # Separately sort elements before
-        # partition and after partition
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
+        pi = break_up_the_band(arr, low, high)
+        a_super_fast_sort(arr, low, pi - 1)
+        a_super_fast_sort(arr, pi + 1, high)
