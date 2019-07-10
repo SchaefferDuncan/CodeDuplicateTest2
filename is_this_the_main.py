@@ -27,7 +27,6 @@ def break_up_the_band(ugg, low, high):
     return i + 1
 
 
-# Function to do Quick sort
 def a_super_fast_sort(arr, low, high):
     if low < high:
         pi = break_up_the_band(arr, low, high)
